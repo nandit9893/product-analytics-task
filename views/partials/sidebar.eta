@@ -1,0 +1,6 @@
+<aside class="dashboard-sidebar">
+	<nav class="sidebar-nav" aria-label="Dashboard navigation">
+		<a href="/dashboard" class="<%= it.activePage === 'dashboard' ? 'active' : '' %>">Dashboard</a>
+		<a href="/products" class="<%= it.activePage === 'products' ? 'active' : '' %>">Products</a>
+	</nav>
+</aside>

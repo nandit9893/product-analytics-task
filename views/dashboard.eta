@@ -1,0 +1,57 @@
+<% layout('./layout/dashboard-shell', { title: 'Dashboard', user: it.user, activePage: 'dashboard' }) %>
+
+<section class="page-heading">
+	<p class="eyebrow">Overview</p>
+	<h1>Welcome,<%= it.user.fullName || it.user.email %></h1>
+	<p>Manage your collection and keep your workspace moving.</p>
+</section>
+
+<section class="dashboard-stats" aria-label="Dashboard summary">
+	<article class="stat-panel">
+		<span>Products</span>
+		<strong><%= it.productStats.total %></strong>
+		<small>Items in catalogue</small>
+	</article>
+	<article class="stat-panel accent-panel">
+		<span>Orders</span>
+		<strong>08</strong>
+		<small>Awaiting attention</small>
+	</article>
+	<article class="stat-panel">
+		<span>Revenue</span>
+		<strong>$2,480</strong>
+		<small>This month</small>
+	</article>
+</section>
+
+<section class="dashboard-charts" aria-label="Product analytics charts">
+	<article class="chart-panel">
+		<div class="chart-heading">
+			<p class="eyebrow">Inventory mix</p>
+			<h2>Products by category</h2>
+		</div>
+		<div class="chart-area"><canvas id="products-by-category"></canvas></div>
+	</article>
+	<article class="chart-panel">
+		<div class="chart-heading">
+			<p class="eyebrow">Market reach</p>
+			<h2>Products by country</h2>
+		</div>
+		<div class="chart-area chart-area-pie"><canvas id="products-by-country"></canvas></div>
+	</article>
+</section>
+
+<script>
+	window.productDashboardCharts =<%~ JSON.stringify({
+		categories: {
+			labels: it.productStats.categories.map((item) => item.key),
+			values: it.productStats.categories.map((item) => item.doc_count),
+		},
+		countries: {
+			labels: it.productStats.countries.map((item) => item.key),
+			values: it.productStats.countries.map((item) => item.doc_count),
+		},
+	}) %>;
+</script>
+<script src="/vendor/chart.umd.min.js"></script>
+<script src="/public/dashboard.js"></script>

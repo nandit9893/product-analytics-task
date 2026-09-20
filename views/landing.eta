@@ -1,0 +1,230 @@
+<% layout('./layout/main', { title: 'Fashion - Explore Unique Collections' }) %>
+
+<link rel="stylesheet" href="/public/css/landing.css">
+
+<%~ include('./partials/header') %>
+
+<main class="landing-page">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-card">
+      <div class="hero-text-content">
+        <h1 class="hero-title">
+          <span class="white-highlight">LET'S</span><br>
+          EXPLORE<br>
+          <span class="yellow-highlight">UNIQUE</span><br>
+          COLLECTIONS.
+        </h1>
+        <p class="hero-subtitle">Live for influential and innovative design!</p>
+        <div class="hero-action">
+          <a href="#catalogue" class="btn-cta">Shop Now</a>
+        </div>
+      </div>
+      <div class="hero-image-wrapper">
+        <img src="/public/images/monkey.jpg" alt="Creative Collection" class="hero-img">
+      </div>
+    </div>
+  </section>
+
+  <!-- Brand Logos Banner -->
+  <section class="brands-banner">
+    <span class="brand-item">H&amp;M</span>
+    <span class="brand-item">OBEY</span>
+    <span class="brand-item">shopify</span>
+    <span class="brand-item">LACOSTE</span>
+    <span class="brand-item">Levi's</span>
+    <span class="brand-item">amazon</span>
+  </section>
+
+  <!-- New Arrivals Section -->
+  <section id="catalogue" class="section-container">
+    <div class="section-header">
+      <h2 class="section-title">NEW ARRIVALS</h2>
+    </div>
+    <div class="cards-grid three-col">
+      <div class="product-card">
+        <div class="product-img-box bg-soft-blue">
+          <img src="/public/images/banner_1.png" alt="Toy Crane">
+        </div>
+        <div class="product-info">
+          <div>
+            <h3>Vehicles &amp; Action</h3>
+            <p>Explore Now!</p>
+          </div>
+          <span class="arrow-btn">&rarr;</span>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img-box bg-soft-pink">
+          <img src="/public/images/banner_2.png" alt="Clay Dino">
+        </div>
+        <div class="product-info">
+          <div>
+            <h3>Clay &amp; Craft</h3>
+            <p>Explore Now!</p>
+          </div>
+          <span class="arrow-btn">&rarr;</span>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img-box bg-soft-yellow">
+          <img src="/public/images/banner_3.png" alt="Blocks Box">
+        </div>
+        <div class="product-info">
+          <div>
+            <h3>Blocks &amp; Building</h3>
+            <p>Explore Now!</p>
+          </div>
+          <span class="arrow-btn">&rarr;</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Payday Sale Banner -->
+  <section class="payday-banner">
+    <div class="payday-container">
+      <div class="payday-image">
+        <img src="/public/images/img1.jpeg" alt="Special Offer Girl">
+      </div>
+      <div class="payday-content">
+        <h2 class="payday-title">
+          <span class="white-box">PAYDAY</span><br>
+          SALE NOW
+        </h2>
+        <p class="payday-desc">
+          Spend minimal $100 get 30% off<br>
+          voucher code for your next purchase
+        </p>
+        <p class="payday-dates">
+          <strong>1 June - 10 June 2026</strong><br>
+          *Terms &amp; Conditions apply
+        </p>
+        <a href="#catalogue" class="btn-cta">SHOP NOW</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Young's Favourite Section -->
+  <section id="favourite" class="section-container">
+    <div class="section-header">
+      <h2 class="section-title">Young's Favourite</h2>
+    </div>
+    <div class="cards-grid two-col">
+      <div class="favourite-card">
+        <div class="favourite-img-box bg-soft-purple">
+          <img src="/public/images/age_3.png" alt="Trending on Instagram">
+        </div>
+        <div class="product-info">
+          <div>
+            <h3>Trending on Instagram</h3>
+            <p>Explore Now!</p>
+          </div>
+          <span class="arrow-btn">&rarr;</span>
+        </div>
+      </div>
+
+      <div class="favourite-card">
+        <div class="favourite-img-box bg-soft-blue">
+          <img src="/public/images/age_4.png" alt="All Under $40">
+        </div>
+        <div class="product-info">
+          <div>
+            <h3>All Under $40</h3>
+            <p>Explore Now!</p>
+          </div>
+          <span class="arrow-btn">&rarr;</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shop by Age Section -->
+  <section class="section-container">
+    <div class="section-header">
+      <h2 class="section-title">Shop by Age</h2>
+    </div>
+    <div class="age-group-grid">
+      <div class="age-card">
+        <div class="age-img-wrapper">
+          <img src="/public/images/age_1.png" alt="Age 0-2">
+        </div>
+        <span class="age-label">0 - 2 Years</span>
+      </div>
+      <div class="age-card">
+        <div class="age-img-wrapper">
+          <img src="/public/images/age_2.png" alt="Age 3-4">
+        </div>
+        <span class="age-label">3 - 4 Years</span>
+      </div>
+      <div class="age-card">
+        <div class="age-img-wrapper">
+          <img src="/public/images/age_3.png" alt="Age 5-7">
+        </div>
+        <span class="age-label">5 - 7 Years</span>
+      </div>
+      <div class="age-card">
+        <div class="age-img-wrapper">
+          <img src="/public/images/age_4.png" alt="Age 8-11">
+        </div>
+        <span class="age-label">8 - 11 Years</span>
+      </div>
+      <div class="age-card">
+        <div class="age-img-wrapper">
+          <img src="/public/images/age_5.png" alt="Age 12+">
+        </div>
+        <span class="age-label">12+ Years</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- App Download Section -->
+  <section class="app-download-section">
+    <div class="app-container">
+      <div class="app-text">
+        <h2>DOWNLOAD APP &amp;<br>GET THE VOUCHER!</h2>
+        <p>Get 30% off for first transaction using<br>Rondovision mobile app for now.</p>
+        <div class="store-buttons">
+          <a href="#" class="store-btn">
+            <span class="store-icon">&#63743;</span>
+            <div><small>Download on the</small><strong>App Store</strong></div>
+          </a>
+          <a href="#" class="store-btn">
+            <span class="store-icon">&#9658;</span>
+            <div><small>GET IT ON</small><strong>Google Play</strong></div>
+          </a>
+        </div>
+      </div>
+      <div class="app-mockup">
+        <div class="mobile-frame">
+          <div class="mobile-notch"></div>
+          <div class="mobile-screen">
+            <div class="mobile-header">Match your style</div>
+            <div class="mobile-cards">
+              <div class="mini-card c1"></div>
+              <div class="mini-card c2"></div>
+              <div class="mini-card c3"></div>
+              <div class="mini-card c4"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="newsletter-section">
+    <div class="newsletter-content">
+      <h2>JOIN SHOPPING COMMUNITY TO<br>GET MONTHLY PROMO</h2>
+      <p>Type your email down below and be young wild generation</p>
+      <form class="newsletter-form" onsubmit="event.preventDefault();">
+        <input type="email" placeholder="Add your email here" required>
+        <button type="submit">SEND</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<%~ include('./partials/footer') %>

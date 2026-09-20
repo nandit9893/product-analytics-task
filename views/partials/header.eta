@@ -1,0 +1,24 @@
+<header class="navbar">
+  <div class="nav-container">
+    <a href="/" class="brand-logo">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M12 2L2 22h20L12 2zm0 4.5l6.5 13.5h-13L12 6.5z"/>
+      </svg>
+      <span>FASHION</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="/#catalogue">CATALOGUE</a>
+      <a href="/#fashion">FASHION</a>
+      <a href="/#favourite">FAVOURITE</a>
+      <a href="/#lifestyle">LIFESTYLE</a>
+<% if (it.user) { %>
+        <a href="/dashboard" class="user-link"><%= it.user.fullName || it.user.email %></a>
+        <form method="POST" action="/auth/logout" class="logout-form">
+          <button type="submit" class="btn-nav-signup">LOGOUT</button>
+        </form>
+<% } else { %>
+        <a href="/auth/signin" class="btn-nav-signup">SIGN IN</a>
+<% } %>
+    </nav>
+  </div>
+</header>

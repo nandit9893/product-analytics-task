@@ -1,0 +1,147 @@
+.signup-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 10px;
+}
+
+.signup-card {
+  width: 100%;
+  max-width: 450px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.signup-card h1 {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 400;
+  margin: 0 0 0.3rem;
+  color: #1a1a1a;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  font-size: 1rem;
+  color: #333;
+  outline: none;
+  background: transparent;
+}
+
+.form-group input:focus {
+  border-bottom-color: #2563eb;
+}
+
+.form-group input::placeholder {
+  color: #999;
+}
+
+.btn-signup {
+  width: 100%;
+  padding: 0.85rem;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1rem;
+  margin-bottom: 1.2rem;
+  transition: background-color 0.2s;
+}
+
+.btn-signup:hover {
+  background-color: #1d4ed8;
+}
+
+.btn-primary:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.btn-primary.is-loading::before {
+  animation: button-spinner 0.8s linear infinite;
+  border: 2px solid rgba(255, 255, 255, 0.45);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  content: "";
+  display: inline-block;
+  height: 0.85em;
+  margin-right: 0.5rem;
+  vertical-align: -0.12em;
+  width: 0.85em;
+}
+
+@keyframes button-spinner {
+  to { transform: rotate(360deg); }
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  color: #333;
+  cursor: pointer;
+}
+
+.remember-me input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #2563eb;
+  cursor: pointer;
+}
+
+.signup-footer {
+  font-size: 14px;
+}
+
+.error {
+  color: #dc2626;
+  background-color: #fef2f2;
+  padding: 0.7rem;
+  border-radius: 6px;
+  margin-bottom: 1.2rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.success {
+  color: #166534;
+  background-color: #f0fdf4;
+  padding: 4px 0;
+  border-radius: 6px;
+  margin: 4px 0;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.signin-link {
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+  color: #333;
+  text-align: center;
+}
+
+.signin-link a {
+  color: #2563eb;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.signin-link a:hover {
+  color: #1d4ed8;
+}

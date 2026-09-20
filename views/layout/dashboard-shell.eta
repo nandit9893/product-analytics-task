@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title><%= it.title || 'Dashboard' %></title>
+	<link rel="stylesheet" href="/public/css/main.css">
+	<link rel="stylesheet" href="/public/css/header.css">
+	<link rel="stylesheet" href="/public/css/footer.css">
+	<link rel="stylesheet" href="/public/css/landing.css">
+	<link rel="stylesheet" href="/public/css/dashboard.css">
+	<link rel="stylesheet" href="/public/css/skeleton/products.css">
+</head>
+<body class="dashboard-body">
+<%~ include('../partials/header') %>
+	<div class="dashboard-shell">
+<%~ include('../partials/sidebar') %>
+		<main class="dashboard-content">
+<%~ it.body %>
+		</main>
+	</div>
+	<script src="/public/commonFunction.js"></script>
+</body>
+</html>

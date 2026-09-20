@@ -1,0 +1,35 @@
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-col brand-col">
+      <h3>FASHION</h3>
+      <p>Complete your style with awesome clothes from us.</p>
+      <div class="social-icons">
+        <a href="#" aria-label="Facebook">f</a>
+        <a href="#" aria-label="LinkedIn">in</a>
+        <a href="#" aria-label="Twitter">t</a>
+        <a href="#" aria-label="Instagram">ig</a>
+      </div>
+    </div>
+    <div class="footer-links-group">
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#">About</a>
+        <a href="#">Contact us</a>
+        <a href="#">Support</a>
+        <a href="#">Careers</a>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Link</h4>
+        <a href="#">Share Location</a>
+        <a href="#">Orders Tracking</a>
+        <a href="#">Size Guide</a>
+        <a href="#">FAQs</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="#">Terms &amp; conditions</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>

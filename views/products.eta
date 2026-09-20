@@ -1,0 +1,52 @@
+<% layout('./layout/dashboard-shell', { title: 'Products', user: it.user, activePage: 'products' }) %>
+
+<div class="products-page">
+<section class="page-heading">
+	<p class="eyebrow">Catalogue</p>
+	<h1>Products</h1>
+	<p><%= it.total %> products from Elasticsearch</p>
+</section>
+
+<form class="product-filters" method="get" action="/products">
+	<label>Search <input type="search" name="search" value="<%= it.filters.search %>" placeholder="Search products"></label>
+	<label>Category <select name="category"><option value="">All categories</option><% it.categories.forEach((item) => { %><option value="<%= item.key %>"<%= it.filters.category === item.key ? 'selected' : '' %>><%= item.key %></option><% }) %></select></label>
+	<label>Country <select name="country"><option value="">All countries</option><% it.countries.forEach((item) => { %><option value="<%= item.key %>"<%= it.filters.country === item.key ? 'selected' : '' %>><%= item.key %></option><% }) %></select></label>
+	<label>Min price <input type="number" name="minPrice" min="0" value="<%= it.filters.minPrice %>"></label>
+	<label>Max price <input type="number" name="maxPrice" min="0" value="<%= it.filters.maxPrice %>"></label>
+	<label>Sort <select name="sort"><option value="name"<%= it.filters.sort === 'name' ? 'selected' : '' %>>Name</option><option value="price"<%= it.filters.sort === 'price' ? 'selected' : '' %>>Price</option><option value="quantity"<%= it.filters.sort === 'quantity' ? 'selected' : '' %>>Quantity</option></select></label>
+	<label>Order <select name="order"><option value="asc"<%= it.filters.order === 'asc' ? 'selected' : '' %>>Ascending</option><option value="desc"<%= it.filters.order === 'desc' ? 'selected' : '' %>>Descending</option></select></label>
+	<button type="submit">Apply filters</button>
+</form>
+
+<% if (it.error) { %>
+	<p class="products-error"><%= it.error %></p>
+<% } %>
+
+<section class="product-grid" aria-label="Products">
+<% if (it.products.length) { %>
+<% it.products.forEach((product) => { %>
+			<article class="product-card">
+				<div class="product-card-body">
+					<p class="product-category"><%= product.category %></p>
+					<h2><%= product.name %></h2>
+					<p><%= product.country %></p>
+				</div>
+				<footer><strong>$<%= product.price %></strong><span>Qty:<%= product.quantity %></span></footer>
+			</article>
+<% }) %>
+<% } else { %>
+		<p class="empty-products">No products match these filters.</p>
+<% } %>
+</section>
+
+<section class="product-skeleton" aria-hidden="true">
+<% for (let index = 0; index < 12; index++) { %><div class="skeleton-card"><span></span><span></span><span></span></div><% } %>
+</section>
+
+<nav class="product-pagination" aria-label="Product pagination">
+	<p>Showing&nbsp;<%= it.rangeStart %>&ndash;<%= it.rangeEnd %>&nbsp;of&nbsp;<%= it.total %></p>
+<% if (it.previousUrl) { %><a href="<%= it.previousUrl %>">Previous</a><% } else { %><span class="disabled">Previous</span><% } %>
+<% for (let pageNumber = 1; pageNumber <= it.totalPages; pageNumber++) { %><a class="<%= pageNumber === it.page ? 'active' : '' %>" href="<%= it.pageUrl(pageNumber) %>"><%= pageNumber %></a><% } %>
+<% if (it.nextUrl) { %><a href="<%= it.nextUrl %>">Next</a><% } else { %><span class="disabled">Next</span><% } %>
+</nav>
+</div>

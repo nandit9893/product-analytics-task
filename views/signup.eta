@@ -1,0 +1,53 @@
+<% layout('./layout/main', { title: 'Sign Up' }) %>
+  <link rel="stylesheet" href="/public/css/signup.css">
+
+<div class="signup-wrapper">
+  <div class="signup-card">
+    <h1>Sign up</h1>
+
+    <form method="POST" action="/auth/signup" data-async-submit>
+      <div class="form-group">
+        <input type="text" name="fullName" placeholder="Name" value="<%= it.fullName || '' %>" required>
+      </div>
+
+      <div class="form-group">
+        <input type="email" name="email" placeholder="Email" value="<%= it.email || '' %>" required>
+      </div>
+
+      <div class="form-group">
+        <input type="password" name="password" placeholder="Password" required minlength="8">
+      </div>
+
+      <div class="form-group">
+        <input type="password" name="confirmPassword" placeholder="Confirm Password" required minlength="8">
+      </div>
+
+<% if (it.turnstileSiteKey) { %>
+                  <div class="turnstile-container">
+                    <div class="cf-turnstile" data-sitekey="<%= it.turnstileSiteKey %>"></div>
+                  </div>
+<% } %>
+
+      <button type="submit" class="btn-primary" data-loading-text="Signing up...">
+        Sign up
+      </button>
+
+      <div class="form-message" aria-live="polite">
+<% if (it.error) { %>
+                <p class="error"><%= it.error %></p>
+<% } %>
+<% if (it.success) { %>
+                <p class="success"><%= it.success %></p>
+<% } %>
+      </div>
+
+      <label class="remember-me">
+        <input type="checkbox" name="rememberMe" checked>
+        Remember me
+      </label>
+      <p class="signup-footer">Already have an account? <a href="/auth/signin">Sign in</a></p>
+
+    </form>
+  </div>
+
+</div>
