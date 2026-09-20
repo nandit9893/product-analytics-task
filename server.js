@@ -8,7 +8,10 @@ const config = require('./config/env');
 const app = new Hono();
 
 app.use('/public/*', serveStatic({ root: './' }));
-app.use('/vendor/*', serveStatic({ root: './node_modules/chart.js/dist' }));
+app.use('/vendor/*', serveStatic({
+	root: './node_modules/chart.js/dist',
+	rewriteRequestPath: (path) => path.replace(/^\/vendor/, ''),
+}));
 
 app.route('/auth', auth);
 app.route('/', index);
