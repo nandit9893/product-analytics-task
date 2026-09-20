@@ -48,7 +48,7 @@
   color: #999;
 }
 
-.btn-signup {
+.btn-primary {
   width: 100%;
   padding: 0.85rem;
   background-color: #2563eb;
@@ -63,7 +63,7 @@
   transition: background-color 0.2s;
 }
 
-.btn-signup:hover {
+.btn-primary:hover {
   background-color: #1d4ed8;
 }
 

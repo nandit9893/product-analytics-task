@@ -58,7 +58,8 @@
 
       const responseHtml = await response.text();
       const responseDocument = new DOMParser().parseFromString(responseHtml, 'text/html');
-      const responseError = responseDocument.querySelector('.error')?.textContent.trim();
+      const responseError = responseDocument.querySelector('.error')?.textContent.trim()
+        || (!response.ok ? responseHtml.trim() : '');
       const responseSuccess = responseDocument.querySelector('.success')?.textContent.trim();
 
       updateMessage(form, 'error', responseError);

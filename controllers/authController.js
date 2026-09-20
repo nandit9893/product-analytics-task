@@ -70,7 +70,7 @@ async function signin(c) {
     if (!user) {
       return c.html(
         eta.render("signin", {
-          error: "Account not registered.",
+          error: "Account not registered",
           turnstileSiteKey: config.turnstileSiteKey,
           email,
         })
@@ -83,7 +83,7 @@ async function signin(c) {
     if (!isValidPassword) {
       return c.html(
         eta.render("signin", {
-          error: "Password not matches.",
+          error: "Password is incorrect",
           turnstileSiteKey: config.turnstileSiteKey,
           email,
         })

@@ -1,6 +1,11 @@
 const config = require('../config/env');
 
 async function verifyTurnstile(c, next) {
+  if (config.nodeEnv !== 'production') {
+    await next();
+    return;
+  }
+
   const body = await c.req.parseBody();
   const token = body['cf-turnstile-response'];
 
